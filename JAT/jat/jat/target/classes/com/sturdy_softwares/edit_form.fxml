@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1020.0" maxWidth="1140.0" minHeight="1020.0" minWidth="1240.0" prefHeight="1020.0" prefWidth="1240.0" style="-fx-border-radius: 20px;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sturdy_softwares.Edit_FormController">
+  <content>
+    <AnchorPane maxHeight="904.0" maxWidth="1130.0" minHeight="904.0" minWidth="1130.0" prefHeight="904.0" prefWidth="1130.0" styleClass="root" stylesheets="@ss_style.css">
+         <children>
+            <ImageView fx:id="title" disable="true" fitHeight="83.0" fitWidth="205.0" layoutX="429.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="509.0" AnchorPane.rightAnchor="506.0">
+               <image>
+                  <Image url="@/JAT Logo.png" />
+               </image>
+            </ImageView>
+            <Separator disable="true" layoutX="57.0" layoutY="56.0" prefHeight="11.0" prefWidth="854.0" style="-fx-border-color: black; -fx-border-width: 3px; -fx-background-color: #4fc8d5;" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="56.59999999999991" />
+            <ImageView fx:id="logo" disable="true" fitHeight="68.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true" styleClass="company_logo" AnchorPane.bottomAnchor="14.1219482421875" AnchorPane.rightAnchor="13.0">
+               <image>
+                  <Image url="@/SS Logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="278.0" fitWidth="978.0" layoutX="-20.0" layoutY="231.0" opacity="0.48" pickOnBounds="true">
+               <image>
+                  <Image url="@/JAT bg.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="14.0" layoutY="80.0" prefHeight="422.0" prefWidth="60.0" spacing="20.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="80.0">
+               <children>
+                  <Button id="New" fx:id="save_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#save_entry" prefHeight="25.0" prefWidth="38.0" stylesheets="@ss_style.css" text="New" textFill="TRANSPARENT">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/plus-solid.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="my-button" />
+                        <String fx:value="new" />
+                     </styleClass>
+                  </Button>
+                  <Button id="Delete" fx:id="cancel_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" stylesheets="@ss_style.css" text="Cancel" textFill="TRANSPARENT">
+                     <graphic>
+                        <ImageView fx:id="cancel_btn" fitHeight="25.0" fitWidth="52.0" onDragDetected="#return_main" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/trash-can-solid.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="my-button" />
+                        <String fx:value="delete" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </VBox>
+            <Label layoutX="128.0" layoutY="109.0" text="Job Title: " />
+            <TextField fx:id="job_title" layoutX="186.0" layoutY="105.0" prefHeight="26.0" prefWidth="610.0" promptText="Position/Job Applying For" />
+         </children>
+      </AnchorPane>
+  </content>
+</ScrollPane>

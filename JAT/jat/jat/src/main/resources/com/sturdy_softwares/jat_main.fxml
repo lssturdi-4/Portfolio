@@ -11,16 +11,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="795.0" maxWidth="1021.0" minHeight="795.0" minWidth="1021.0" prefHeight="795.0" prefWidth="1021.0" style="-fx-border-radius: 20px;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1020.0" maxWidth="1140.0" minHeight="1020.0" minWidth="1240.0" prefHeight="1020.0" prefWidth="1240.0" style="-fx-border-radius: 20px;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sturdy_softwares.Main_DisplayController">
   <content>
-    <AnchorPane maxHeight="794.0" maxWidth="1020.0" minHeight="794.0" minWidth="1020.0" prefHeight="794.0" prefWidth="1020.0" styleClass="root" stylesheets="@ss_style.css">
+    <AnchorPane maxHeight="904.0" maxWidth="1130.0" minHeight="904.0" minWidth="1130.0" prefHeight="904.0" prefWidth="1130.0" styleClass="root" stylesheets="@ss_style.css">
          <children>
-            <Separator disable="true" layoutX="57.0" layoutY="56.0" prefHeight="11.0" prefWidth="854.0" style="-fx-border-color: black; -fx-border-width: 3px; -fx-background-color: #4fc8d5;" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="56.59999999999991" />
-            <ImageView fx:id="title" disable="true" fitHeight="83.0" fitWidth="205.0" layoutX="409.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="409.0" AnchorPane.rightAnchor="406.0">
+            <ImageView fx:id="title" disable="true" fitHeight="83.0" fitWidth="205.0" layoutX="429.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="509.0" AnchorPane.rightAnchor="506.0">
                <image>
                   <Image url="@/JAT Logo.png" />
                </image>
             </ImageView>
+            <Separator disable="true" layoutX="57.0" layoutY="56.0" prefHeight="11.0" prefWidth="854.0" style="-fx-border-color: black; -fx-border-width: 3px; -fx-background-color: #4fc8d5;" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="56.59999999999991" />
             <ImageView fx:id="logo" disable="true" fitHeight="68.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true" styleClass="company_logo" AnchorPane.bottomAnchor="14.1219482421875" AnchorPane.rightAnchor="13.0">
                <image>
                   <Image url="@/SS Logo.png" />
@@ -33,6 +33,19 @@
             </ImageView>
             <VBox layoutX="14.0" layoutY="80.0" prefHeight="422.0" prefWidth="60.0" spacing="20.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="80.0">
                <children>
+                  <Button id="New" fx:id="new_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" stylesheets="@ss_style.css" text="New" textFill="TRANSPARENT">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/plus-solid.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="my-button" />
+                        <String fx:value="new" />
+                     </styleClass>
+                  </Button>
                   <Button id="Open" fx:id="open_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" styleClass="my-button" stylesheets="@ss_style.css" text="Open" textFill="TRANSPARENT">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
@@ -42,7 +55,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button id="Edit" fx:id="edit_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" styleClass="my-button" stylesheets="@ss_style.css" text="Edit">
+                  <Button id="Edit" fx:id="edit_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" styleClass="my-button" stylesheets="@ss_style.css" text="Edit" textFill="TRANSPARENT">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -50,19 +63,6 @@
                            </image>
                         </ImageView>
                      </graphic>
-                  </Button>
-                  <Button id="Resume" fx:id="res_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" stylesheets="@ss_style.css" text="Resume" textFill="TRANSPARENT">
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@/file-solid.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <styleClass>
-                        <String fx:value="my-button" />
-                        <String fx:value="resume" />
-                     </styleClass>
                   </Button>
                   <Button id="Delete" fx:id="del_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" stylesheets="@ss_style.css" text="Delete" textFill="TRANSPARENT">
                      <graphic>
@@ -79,18 +79,19 @@
                   </Button>
                </children>
             </VBox>
-            <TableView fx:id="tracker_table" layoutX="64.8" layoutY="73.60000000000001" prefHeight="640.0" prefWidth="899.0" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="71.0">
+            <TableView fx:id="tracker_table" layoutX="64.8" layoutY="73.60000000000001" prefHeight="750.0" prefWidth="1050.0" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="71.0">
               <columns>
-                <TableColumn fx:id="job_title" prefWidth="345.60005950927734" text="Job Title" />
+                <TableColumn fx:id="job_title" prefWidth="300.60005950927734" text="Job Title" />
                 <TableColumn fx:id="cmp_name" prefWidth="176.79995727539062" text="Company" />
-                  <TableColumn fx:id="date_applied" prefWidth="91.20001220703125" text="Date Applied" />
+                  <TableColumn fx:id="date_applied" prefWidth="111.20001220703125" text="Date Applied" />
                   <TableColumn fx:id="app_status" prefWidth="115.99993896484375" text="Application Status" />
                   <TableColumn fx:id="intrvw" prefWidth="76.800048828125" text="Interview" />
-                  <TableColumn fx:id="intrvw_date" prefWidth="81.60000000000002" style="-fx-border-radius: 10px;" text="Interview &#10;Date" />
+                  <TableColumn fx:id="intrvw_date" prefWidth="111.60000000000002" style="-fx-border-radius: 10px;" text="Interview &#10;Date" />
+                  <TableColumn fx:id="resume" prefWidth="55" text="Resume" />
+                  <TableColumn fx:id="cover_ltr" prefWidth="55" text="Cover &#10;Letter" />
               </columns>
             </TableView>
          </children>
       </AnchorPane>
   </content>
 </ScrollPane>
-
