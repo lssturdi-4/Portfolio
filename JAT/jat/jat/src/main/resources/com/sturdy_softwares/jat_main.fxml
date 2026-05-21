@@ -85,7 +85,7 @@
                 <TableColumn fx:id="cmp_name" prefWidth="176.79995727539062" text="Company" />
                   <TableColumn fx:id="date_applied" prefWidth="111.20001220703125" text="Date Applied" />
                   <TableColumn fx:id="app_status" prefWidth="115.99993896484375" text="Application Status" />
-                  <TableColumn fx:id="intrvw" prefWidth="76.800048828125" text="Interview" />
+                  <TableColumn fx:id="intrvw" prefWidth="76.800048828125" text="Interviewed" />
                   <TableColumn fx:id="intrvw_date" prefWidth="111.60000000000002" style="-fx-border-radius: 10px;" text="Interview &#10;Date" />
                   <TableColumn fx:id="resume" prefWidth="55" text="Resume" />
                   <TableColumn fx:id="cover_ltr" prefWidth="55" text="Cover &#10;Letter" />
