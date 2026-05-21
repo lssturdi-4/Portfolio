@@ -11,46 +11,51 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="795.0" maxWidth="1021.0" minHeight="795.0" minWidth="1021.0" prefHeight="795.0" prefWidth="1021.0" style="-fx-border-radius: 20px;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main_Display">
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="795.0" maxWidth="1021.0" minHeight="795.0" minWidth="1021.0" prefHeight="795.0" prefWidth="1021.0" style="-fx-border-radius: 20px;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
   <content>
     <AnchorPane maxHeight="794.0" maxWidth="1020.0" minHeight="794.0" minWidth="1020.0" prefHeight="794.0" prefWidth="1020.0" styleClass="root" stylesheets="@ss_style.css">
          <children>
             <Separator disable="true" layoutX="57.0" layoutY="56.0" prefHeight="11.0" prefWidth="854.0" style="-fx-border-color: black; -fx-border-width: 3px; -fx-background-color: #4fc8d5;" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="56.59999999999991" />
             <ImageView fx:id="title" disable="true" fitHeight="83.0" fitWidth="205.0" layoutX="409.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="409.0" AnchorPane.rightAnchor="406.0">
                <image>
-                  <Image url="@../../../../../../../../Pictures/JAT%20Logo.png" />
+                  <Image url="@/JAT Logo.png" />
                </image>
             </ImageView>
             <ImageView fx:id="logo" disable="true" fitHeight="68.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true" styleClass="company_logo" AnchorPane.bottomAnchor="14.1219482421875" AnchorPane.rightAnchor="13.0">
                <image>
-                  <Image url="@images/avatars/SS%20Logo.png" />
+                  <Image url="@/SS Logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="278.0" fitWidth="978.0" layoutX="-20.0" layoutY="231.0" opacity="0.48" pickOnBounds="true">
+               <image>
+                  <Image url="@/JAT bg.png" />
                </image>
             </ImageView>
             <VBox layoutX="14.0" layoutY="80.0" prefHeight="422.0" prefWidth="60.0" spacing="20.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="80.0">
                <children>
-                  <Button id="Edit" fx:id="open_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" styleClass="my-button" stylesheets="@ss_style.css" text="Open" textFill="TRANSPARENT">
+                  <Button id="Open" fx:id="open_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" styleClass="my-button" stylesheets="@ss_style.css" text="Open" textFill="TRANSPARENT">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/icons/folder-open-solid.png" />
+                              <Image url="@/folder-open-solid.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button id="Edit" fx:id="edit_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="-fx-background-color: #e1f5f7" prefHeight="25.0" prefWidth="38.0" styleClass="my-button" stylesheets="@ss_style.css" text="Edit">
+                  <Button id="Edit" fx:id="edit_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" styleClass="my-button" stylesheets="@ss_style.css" text="Edit">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/icons/pen-to-square-solid.png" />
+                              <Image url="@/pen-to-square-solid.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button id="Edit" fx:id="res_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" stylesheets="@ss_style.css" text="Resume" textFill="TRANSPARENT">
+                  <Button id="Resume" fx:id="res_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" stylesheets="@ss_style.css" text="Resume" textFill="TRANSPARENT">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/icons/file-solid.png" />
+                              <Image url="@/file-solid.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -59,11 +64,11 @@
                         <String fx:value="resume" />
                      </styleClass>
                   </Button>
-                  <Button id="Edit" fx:id="del_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="-fx-background-color: #e1f5f7" prefHeight="25.0" prefWidth="38.0" stylesheets="@ss_style.css" text="Delete" textFill="TRANSPARENT">
+                  <Button id="Delete" fx:id="del_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" stylesheets="@ss_style.css" text="Delete" textFill="TRANSPARENT">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/icons/trash-can-solid.png" />
+                              <Image url="@/trash-can-solid.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -74,11 +79,6 @@
                   </Button>
                </children>
             </VBox>
-            <ImageView fitHeight="278.0" fitWidth="978.0" layoutX="-20.0" layoutY="231.0" opacity="0.48" pickOnBounds="true">
-               <image>
-                  <Image url="@../../../../../../../../Pictures/JAT%20bg.png" />
-               </image>
-            </ImageView>
             <TableView fx:id="tracker_table" layoutX="64.8" layoutY="73.60000000000001" prefHeight="640.0" prefWidth="899.0" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="71.0">
               <columns>
                 <TableColumn fx:id="job_title" prefWidth="345.60005950927734" text="Job Title" />
@@ -93,3 +93,4 @@
       </AnchorPane>
   </content>
 </ScrollPane>
+
