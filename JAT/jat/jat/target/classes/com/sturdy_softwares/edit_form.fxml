@@ -30,7 +30,7 @@
                   <Image url="@/SS Logo.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="278.0" fitWidth="978.0" layoutX="-20.0" layoutY="217.0" opacity="0.22" pickOnBounds="true">
+            <ImageView fitHeight="98.0" fitWidth="1200.0" layoutX="-29.0" layoutY="788.0" opacity="0.22" pickOnBounds="true">
                <image>
                   <Image url="@/JAT bg.png" />
                </image>
@@ -118,7 +118,7 @@
                </styleClass>
             </Button>
             <Label layoutX="100.0" layoutY="538.0" styleClass="edit-label" stylesheets="@ss_style.css" text="Job Description:" />
-            <TextArea fx:id="description" layoutX="275.0" layoutY="538.0" prefHeight="281.0" prefWidth="682.0" promptText="Describe the position, duties, responsiblities of this job" />
+            <TextArea fx:id="description" layoutX="275.0" layoutY="538.0" prefHeight="255.0" prefWidth="682.0" promptText="Describe the position, duties, responsiblities of this job" />
             <Label fx:id="error_label" layoutX="287.0" layoutY="310.0" prefHeight="18.0" prefWidth="178.0" style="-fx-background-color: #4fc8d5; -fx-background-radius: 3px; -fx-alignment: center;" text=" Please Enter Only Numbers" textFill="RED" visible="false">
                <font>
                   <Font name="Bodoni MT Bold" size="15.0" />

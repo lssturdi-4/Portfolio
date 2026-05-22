@@ -11,11 +11,13 @@ public class Entry {
     private boolean interview;
     private Date interview_date;
     private boolean resume;
+    private String resume_path;
     private boolean cover_letter;
+    private String cover_letter_path;
     private String description;
     private String rate;
     private String work_loc;
-    private int amount;
+    private double amount;
     
 
     public Entry(String cmp_name, String job_title, String app_status, Date date_applied, boolean interview, Date interview_date, boolean resume, boolean cover_letter) {
