@@ -20,13 +20,11 @@ public class Entry {
     private double amount;
     
 
-    public Entry(String cmp_name, String job_title, String app_status, Date date_applied, boolean interview, Date interview_date, boolean resume, boolean cover_letter) {
+    public Entry(String cmp_name, String job_title, String app_status, boolean interview, boolean resume, boolean cover_letter) {
         this.cmp_name = cmp_name;
         this.job_title = job_title;
         this.app_status = app_status;
-        this.date_applied = date_applied;
         this.interview = interview;
-        this.interview_date = interview_date;
         this.resume = resume;
         this.cover_letter = cover_letter;
     }
@@ -93,6 +91,54 @@ public class Entry {
 
     public void setCover_letter(boolean cover_letter) {
         this.cover_letter = cover_letter;
+    }
+
+    public String getResume_path() {
+        return resume_path;
+    }
+
+    public void setResume_path(String resume_path) {
+        this.resume_path = resume_path;
+    }
+
+    public String getCover_letter_path() {
+        return cover_letter_path;
+    }
+
+    public void setCover_letter_path(String cover_letter_path) {
+        this.cover_letter_path = cover_letter_path;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getRate() {
+        return rate;
+    }
+
+    public void setRate(String rate) {
+        this.rate = rate;
+    }
+
+    public String getWork_loc() {
+        return work_loc;
+    }
+
+    public void setWork_loc(String work_loc) {
+        this.work_loc = work_loc;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
 }

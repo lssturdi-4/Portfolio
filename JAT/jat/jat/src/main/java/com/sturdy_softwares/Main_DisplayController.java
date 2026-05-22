@@ -1,8 +1,8 @@
 package com.sturdy_softwares;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -51,14 +51,19 @@ public class Main_DisplayController {
     @FXML
     private Button del_btn, edit_btn, open_btn, new_btn;
 
-    Entry entry1 = new Entry("Google", "Software Engineer", "Interview", new Date(), true, new Date(),false, false);
-    Entry entry2 = new Entry("Amazon", "C Developer", "Applied", new Date(), false, null, false, true);
-    Entry entry3 = new Entry("Microsoft", "Computer Scientist", "Offered", new Date(), true, new Date(), true, true);
+    ObservableList<Entry> entryList = FXCollections.observableArrayList();
 
-    ObservableList<Entry> entryList = FXCollections.observableArrayList(Arrays.asList(entry1, entry2, entry3));
+    static final Logger logger = Logger.getLogger(Main_DisplayController.class.getName());
 
-    public void initialize() {
+    public void initialize() throws IOException {
 
+        loadEntries();
+        Utilities utilities = new Utilities();
+        try {
+            utilities.loadData();
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, "Failed to load data", e);
+        }
         // Set tooltips for buttons
         del_btn.setTooltip(new Tooltip("Delete job entry"));
         edit_btn.setTooltip(new Tooltip("Edit job entry"));
@@ -151,7 +156,7 @@ public class Main_DisplayController {
                 try {
                     handleEdit(selectedEntry);
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    logger.log(Level.SEVERE, "Failed to open edit form", e);
                 }
             }
         });
@@ -161,7 +166,7 @@ public class Main_DisplayController {
             try {
                 handleNew();
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.log(Level.SEVERE, "Failed to open new form", e);
             }
         });
 
@@ -172,7 +177,7 @@ public class Main_DisplayController {
                 try {
                     handleOpen(selectedEntry);
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    logger.log(Level.SEVERE, "Failed to open detailed view", e);
                 }
             }
         });
@@ -201,6 +206,12 @@ public class Main_DisplayController {
         App.setRoot("open_form");
         // Code to initialize the open form with the selected entry's data
         Open_FormController openController = new Open_FormController(entry);
+        openController.initialize();
+    }
+
+    public void loadEntries() throws IOException {
+        // Code to load data from a file or database and populate the entryList
+        entryList.setAll(new Utilities().getSampleEntries());
     }
 
 }
