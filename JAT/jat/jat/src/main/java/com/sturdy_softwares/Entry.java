@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Entry {
     
-    private String company_name;
+    private String cmp_name;
     private String job_title;
     private String app_status;
     private Date date_applied;
@@ -12,10 +12,14 @@ public class Entry {
     private Date interview_date;
     private boolean resume;
     private boolean cover_letter;
+    private String description;
+    private String rate;
+    private String work_loc;
+    private int amount;
     
 
-    public Entry(String company_name, String job_title, String app_status, Date date_applied, boolean interview, Date interview_date, boolean resume, boolean cover_letter) {
-        this.company_name = company_name;
+    public Entry(String cmp_name, String job_title, String app_status, Date date_applied, boolean interview, Date interview_date, boolean resume, boolean cover_letter) {
+        this.cmp_name = cmp_name;
         this.job_title = job_title;
         this.app_status = app_status;
         this.date_applied = date_applied;
@@ -26,7 +30,7 @@ public class Entry {
     }
 
     public String getCompany_name() {
-        return company_name;
+        return cmp_name;
     }
     
     public String getJob_title() {
@@ -50,7 +54,7 @@ public class Entry {
     }
 
     public void setCompany_name(String company_name) {
-        this.company_name = company_name;
+        this.cmp_name = company_name;
     }
 
     public void setJob_title(String job_title) {

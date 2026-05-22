@@ -7,6 +7,8 @@ import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -178,10 +180,13 @@ public class Main_DisplayController {
 
     @FXML
     private void handleEdit(Entry entry) throws IOException {
-        App.setRoot("edit_form");
-        // Code to initialize the edit form with the selected entry's data
-        Edit_FormController editController = new Edit_FormController();
-        editController.initialize(entry);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("edit_form.fxml"));
+        Parent root = loader.load();
+        App.setRoot(root);
+
+        Edit_FormController editController = loader.getController();
+        editController.setEntryData(entry);
+
         entryList.remove(entry);
         entryList.add(editController.getEntry());
     }

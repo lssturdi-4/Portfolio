@@ -33,10 +33,6 @@
     -fx-background-color: #6db05c;
 }
 
-.my-button.save:hover{
-    -fx-background-color: #6db05c;
-}
-
 .my-button.new:hover{
     -fx-background-color: #6db05c;
 }

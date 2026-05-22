@@ -17,9 +17,9 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("jat_main"), 1021, 795);
+        scene = new Scene(loadFXML("jat_main"));
         stage.setTitle("Job Application Tracker");
-        stage.centerOnScreen();
+        stage.setResizable(false);
         stage.getIcons().add(new javafx.scene.image.Image(getClass().getResourceAsStream("/JAT Logo.png")));
         stage.setScene(scene);
         stage.show();
@@ -27,6 +27,10 @@ public class App extends Application {
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+    }
+
+    static void setRoot(Parent fxml) throws IOException {
+        scene.setRoot(fxml);
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
