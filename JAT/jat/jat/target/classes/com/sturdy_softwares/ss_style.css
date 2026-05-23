@@ -60,3 +60,12 @@
     -fx-font-underline: true; /* Underlined text */
     -fx-effect: dropshadow(gaussian, #ffffff, 1, 0.5, 0, 0); /* Subtle shadow */
 }
+
+.label.edit-title {
+    -fx-font-family: "Viner Hand ITC", cursive; /* Unique font */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-font-size: 30px; /* Font size */
+    -fx-text-fill: #4fc8d5; /* Light blue text */
+    -fx-font-underline: true; /* Underlined text */
+    -fx-effect: dropshadow(gaussian, #ffffff, 1, 0.5, 0, 0); /* Subtle shadow */
+}

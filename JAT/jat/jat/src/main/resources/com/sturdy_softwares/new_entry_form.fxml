@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="875.0" maxWidth="1080.0" minHeight="875.0" minWidth="1080.0" prefHeight="875.0" prefWidth="1080.0" style="-fx-border-radius: 20px;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sturdy_softwares.Edit_FormController">
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="875.0" maxWidth="1080.0" minHeight="875.0" minWidth="1080.0" prefHeight="875.0" prefWidth="1080.0" style="-fx-border-radius: 20px;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sturdy_softwares.New_Entry_FormController">
   <content>
     <AnchorPane maxHeight="879.0" maxWidth="1079.0" minHeight="863.0" minWidth="1069.0" prefHeight="863.0" prefWidth="1069.0" styleClass="root" stylesheets="@ss_style.css">
          <children>
@@ -124,7 +124,7 @@
                   <Font name="Bodoni MT Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="475.0" layoutY="57.0" prefHeight="62.0" prefWidth="206.0" styleClass="edit-title" stylesheets="@ss_style.css" text="Edit Job Entry" />
+            <Label layoutX="475.0" layoutY="57.0" prefHeight="62.0" prefWidth="206.0" styleClass="edit-title" stylesheets="@ss_style.css" text="New Job Entry" />
          </children>
       </AnchorPane>
   </content>
