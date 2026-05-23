@@ -1,0 +1,51 @@
+{
+  "entries" : [ {
+    "amount" : 45.0,
+    "app_status" : "Rejected",
+    "company_name" : "Epic Games",
+    "cover_letter" : false,
+    "cover_letter_path" : "",
+    "date_applied" : "2025-11-20T05:00:00.000Z",
+    "description" : "C Developer position at Epic Games",
+    "id" : 549831567,
+    "interview" : false,
+    "interview_date" : "2026-03-01T05:00:00.000Z",
+    "job_title" : "C++ Developer",
+    "rate" : "Hourly",
+    "resume" : false,
+    "resume_path" : "",
+    "work_loc" : "On-site"
+  }, {
+    "amount" : 80000.0,
+    "app_status" : "Applied",
+    "company_name" : "Meta",
+    "cover_letter" : false,
+    "cover_letter_path" : "",
+    "date_applied" : "2026-05-15T04:00:00.000Z",
+    "description" : "Software Engineer position at Google",
+    "id" : 879516742,
+    "interview" : true,
+    "interview_date" : "2026-05-21T04:00:00.000Z",
+    "job_title" : "Software Engineer I",
+    "rate" : "Salary",
+    "resume" : true,
+    "resume_path" : "/Master_Resume.pdf",
+    "work_loc" : "Remote"
+  }, {
+    "amount" : 50.0,
+    "app_status" : "Applied",
+    "company_name" : "GenDyn",
+    "cover_letter" : false,
+    "cover_letter_path" : "",
+    "date_applied" : "2026-05-15T04:00:00.000Z",
+    "description" : "Software Engineer position at Google",
+    "id" : 167489512,
+    "interview" : true,
+    "interview_date" : "2026-05-21T04:00:00.000Z",
+    "job_title" : "Software Engineer Intern",
+    "rate" : "Hourly",
+    "resume" : true,
+    "resume_path" : "/Master_Resume.pdf",
+    "work_loc" : "Remote"
+  } ]
+}

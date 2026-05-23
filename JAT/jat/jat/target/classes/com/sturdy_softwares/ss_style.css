@@ -25,8 +25,21 @@
     -fx-background-color: #f43c24; /* Reverts to original color when pressed */
 }
 
+.my-button.cancel:hover {
+    -fx-background-color: #f43c24; /* Reverts to original color when pressed */
+}
+
 .my-button.resume:hover{
     -fx-background-color: #6db05c;
+}
+
+.my-button.new:hover{
+    -fx-background-color: #6db05c;
+}
+
+.my-button.browse{
+    -fx-background-color: #4fc8d5;
+    -fx-text-fill: #23404b;
 }
 
 .company_logo {
@@ -37,4 +50,13 @@
     -fx-background-color: #4fc8d55e; /* Transparent background */
     -fx-border-color: #4fc8d5; /* Light blue border */
     -fx-border-width: 2px; /* Border width */
+}
+
+.label.edit-label {
+    -fx-font-family: "Viner Hand ITC", cursive; /* Unique font */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-font-size: 22px; /* Font size */
+    -fx-text-fill: #4fc8d5; /* Light blue text */
+    -fx-font-underline: true; /* Underlined text */
+    -fx-effect: dropshadow(gaussian, #ffffff, 1, 0.5, 0, 0); /* Subtle shadow */
 }
