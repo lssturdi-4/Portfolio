@@ -80,6 +80,11 @@ public class Main_DisplayController {
             comboBox.setValue(cellData.getValue().getApp_status());
             comboBox.setOnAction(event -> {
                 cellData.getValue().setApp_status(comboBox.getValue());
+                try {
+                    utilities.updateEntry(cellData.getValue());
+                } catch (IOException e) {
+                    logger.log(Level.SEVERE, "Failed to update application status", e);
+                }
             });
             return new javafx.beans.property.SimpleObjectProperty<>(comboBox);
         });
@@ -88,6 +93,11 @@ public class Main_DisplayController {
             datePicker.setValue(cellData.getValue().getDate_applied().toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate());
             datePicker.setOnAction(event -> {
                 cellData.getValue().setDate_applied(java.util.Date.from(datePicker.getValue().atStartOfDay(java.time.ZoneId.systemDefault()).toInstant()));
+                try {
+                    utilities.updateEntry(cellData.getValue());
+                } catch (IOException e) {
+                    logger.log(Level.SEVERE, "Failed to update application date", e);
+                }
             });
             return new javafx.beans.property.SimpleObjectProperty<>(datePicker);
         });
@@ -96,6 +106,11 @@ public class Main_DisplayController {
             checkBox.setSelected(cellData.getValue().isInterview());
             checkBox.setOnAction(event -> {
                 cellData.getValue().setInterview(checkBox.isSelected());
+                try {
+                    utilities.updateEntry(cellData.getValue());
+                } catch (IOException e) {
+                    logger.log(Level.SEVERE, "Failed to update interview status", e);
+                }
             });
             return new javafx.beans.property.SimpleObjectProperty<>(checkBox);
         });
@@ -107,6 +122,11 @@ public class Main_DisplayController {
             }
             datePicker.setOnAction(event -> {
                 cellData.getValue().setInterview_date(java.util.Date.from(datePicker.getValue().atStartOfDay(java.time.ZoneId.systemDefault()).toInstant()));
+                try {
+                    utilities.updateEntry(cellData.getValue());
+                } catch (IOException e) {
+                    logger.log(Level.SEVERE, "Failed to update interview date", e);
+                }
             });
             datePicker.setDisable(!cellData.getValue().isInterview());
             return new javafx.beans.property.SimpleObjectProperty<>(datePicker);

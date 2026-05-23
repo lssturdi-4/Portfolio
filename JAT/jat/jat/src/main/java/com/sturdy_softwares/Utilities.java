@@ -33,6 +33,16 @@ public class Utilities {
         entryList.add(entry);
         saveData();
     }
+
+    public void updateEntry(Entry updatedEntry) throws IOException {
+        for (int i = 0; i < entryList.size(); i++) {
+            if (entryList.get(i).getId() == updatedEntry.getId()) {
+                entryList.set(i, updatedEntry);
+                break;
+            }
+        }
+        saveData();
+    }
     
     public void loadData() {
         // Code to load data from a file or database and populate the entryList
