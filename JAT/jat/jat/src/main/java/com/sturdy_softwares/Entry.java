@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Entry {
     
+    private int id;
     private String cmp_name;
     private String job_title;
     private String app_status;
@@ -21,12 +22,21 @@ public class Entry {
     
 
     public Entry(String cmp_name, String job_title, String app_status, boolean interview, boolean resume, boolean cover_letter) {
+        this.id = Main_DisplayController.idGenerator.generateId();
         this.cmp_name = cmp_name;
         this.job_title = job_title;
         this.app_status = app_status;
         this.interview = interview;
         this.resume = resume;
         this.cover_letter = cover_letter;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCompany_name() {

@@ -83,7 +83,7 @@
             <Label layoutX="208.0" layoutY="272.0" styleClass="edit-label" stylesheets="@ss_style.css" text="Pay:">
               
             </Label>
-            <ComboBox fx:id="rate" layoutX="468.0" layoutY="282.0" prefHeight="26.0" prefWidth="75.0" promptText="Rate" />
+            <ComboBox fx:id="rate" layoutX="468.0" layoutY="282.0" prefHeight="26.0" prefWidth="100.0" promptText="Rate" />
             <TextField fx:id="amount" layoutX="285.0" layoutY="282.0" prefHeight="26.0" prefWidth="177.0" promptText="Amount (ex. 25.50 or 52,000)" />
             <Label layoutX="137.0" layoutY="397.0" styleClass="edit-label" stylesheets="@ss_style.css" text="Interviewed:">
               

@@ -54,16 +54,15 @@ public class Main_DisplayController {
     ObservableList<Entry> entryList = FXCollections.observableArrayList();
 
     static final Logger logger = Logger.getLogger(Main_DisplayController.class.getName());
+    
+    static final IdGenerator idGenerator = new IdGenerator();
 
     public void initialize() throws IOException {
+        
 
         loadEntries();
         Utilities utilities = new Utilities();
-        try {
-            utilities.loadData();
-        } catch (IOException e) {
-            logger.log(Level.SEVERE, "Failed to load data", e);
-        }
+        utilities.loadData();
         // Set tooltips for buttons
         del_btn.setTooltip(new Tooltip("Delete job entry"));
         edit_btn.setTooltip(new Tooltip("Edit job entry"));
@@ -146,6 +145,11 @@ public class Main_DisplayController {
             Entry selectedEntry = tracker_table.getSelectionModel().getSelectedItem();
             if (selectedEntry != null) {
                 entryList.remove(selectedEntry);
+                try {
+                    utilities.removeEntry(selectedEntry.getId());
+                } catch (IOException e) {
+                    logger.log(Level.SEVERE, "Failed to delete entry", e);
+                }
             }
         });
         
@@ -153,7 +157,9 @@ public class Main_DisplayController {
             Entry selectedEntry = tracker_table.getSelectionModel().getSelectedItem();
             if (selectedEntry != null) {
                 // Code to open an edit dialog for the selected entry
+                entryList.remove(selectedEntry);
                 try {
+                    utilities.removeEntry(selectedEntry.getId());
                     handleEdit(selectedEntry);
                 } catch (IOException e) {
                     logger.log(Level.SEVERE, "Failed to open edit form", e);
@@ -191,9 +197,6 @@ public class Main_DisplayController {
 
         Edit_FormController editController = loader.getController();
         editController.setEntryData(entry);
-
-        entryList.remove(entry);
-        entryList.add(editController.getEntry());
     }
 
     @FXML
@@ -211,7 +214,7 @@ public class Main_DisplayController {
 
     public void loadEntries() throws IOException {
         // Code to load data from a file or database and populate the entryList
-        entryList.setAll(new Utilities().getSampleEntries());
+        entryList.setAll(new Utilities().getEntries());
     }
 
 }
