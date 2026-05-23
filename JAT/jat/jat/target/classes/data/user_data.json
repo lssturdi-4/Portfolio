@@ -16,22 +16,6 @@
     "resume_path" : "",
     "work_loc" : "On-site"
   }, {
-    "amount" : 80000.0,
-    "app_status" : "Applied",
-    "company_name" : "Meta",
-    "cover_letter" : false,
-    "cover_letter_path" : "",
-    "date_applied" : "2026-05-15T04:00:00.000Z",
-    "description" : "Software Engineer position at Google",
-    "id" : 879516742,
-    "interview" : true,
-    "interview_date" : "2026-05-21T04:00:00.000Z",
-    "job_title" : "Software Engineer I",
-    "rate" : "Salary",
-    "resume" : true,
-    "resume_path" : "/Master_Resume.pdf",
-    "work_loc" : "Remote"
-  }, {
     "amount" : 50.0,
     "app_status" : "Applied",
     "company_name" : "GenDyn",
@@ -45,7 +29,23 @@
     "job_title" : "Software Engineer Intern",
     "rate" : "Hourly",
     "resume" : true,
-    "resume_path" : "/Master_Resume.pdf",
+    "resume_path" : "./Master_Resume.pdf",
+    "work_loc" : "Remote"
+  }, {
+    "amount" : 80000.0,
+    "app_status" : "Applied",
+    "company_name" : "Meta",
+    "cover_letter" : false,
+    "cover_letter_path" : "",
+    "date_applied" : "2026-05-15T04:00:00.000Z",
+    "description" : "Software Engineer position at Google",
+    "id" : 879516742,
+    "interview" : true,
+    "interview_date" : "2026-05-21T04:00:00.000Z",
+    "job_title" : "Software Engineer I",
+    "rate" : "Salary",
+    "resume" : true,
+    "resume_path" : "C:\\Users\\leroy\\OneDrive\\Documents\\Portfolio\\JAT\\jat\\jat\\src\\main\\java\\com\\sturdy_softwares\\Master_Resume.pdf",
     "work_loc" : "Remote"
   } ]
 }

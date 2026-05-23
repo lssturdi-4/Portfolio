@@ -1,5 +1,7 @@
 package com.sturdy_softwares;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,7 +53,7 @@ public class Main_DisplayController {
     @FXML
     private Button del_btn, edit_btn, open_btn, new_btn;
 
-    ObservableList<Entry> entryList = FXCollections.observableArrayList();
+    static final ObservableList<Entry> entryList = FXCollections.observableArrayList();
 
     static final Logger logger = Logger.getLogger(Main_DisplayController.class.getName());
     
@@ -118,7 +120,17 @@ public class Main_DisplayController {
                 button.setGraphic(imageView);
                 button.setDisable(!entryList.get(tracker_table.getItems().indexOf(cellData.getValue())).isResume());
             button.setOnAction(event -> {
-                // Code to view the resume
+                File file = new File(cellData.getValue().getResume_path());
+                if (file.exists()) {
+                    // Code to open the selected resume file
+                    Desktop desktop = Desktop.getDesktop();
+                    try {
+                        desktop.open(file);
+                    } catch (IOException e) {
+                        logger.log(Level.SEVERE, "Failed to open resume file", e);
+                        System.out.println("Failed to open resume file: " + e.getMessage());
+                    }
+                }
             });
             return new javafx.beans.property.SimpleObjectProperty<>(button);
         });
@@ -131,7 +143,17 @@ public class Main_DisplayController {
                 button.setGraphic(imageView);
                 button.setDisable(!entryList.get(tracker_table.getItems().indexOf(cellData.getValue())).isCover_letter());
             button.setOnAction(event -> {
-                // Code to view the cover letter
+                File file = new File(cellData.getValue().getCover_letter_path());
+                if (file.exists()) {
+                    // Code to open the selected cover letter file
+                    Desktop desktop = Desktop.getDesktop();
+                    try {
+                        desktop.open(file);
+                    } catch (IOException e) {
+                        logger.log(Level.SEVERE, "Failed to open cover letter file", e);
+                        System.out.println("Failed to open cover letter file: " + e.getMessage());
+                    }
+                }
             });
             return new javafx.beans.property.SimpleObjectProperty<>(button);
         });

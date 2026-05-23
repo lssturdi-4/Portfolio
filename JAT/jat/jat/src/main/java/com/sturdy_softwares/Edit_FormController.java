@@ -1,10 +1,13 @@
 package com.sturdy_softwares;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.swing.JFileChooser;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -116,6 +119,42 @@ public class Edit_FormController {
                 logger.log(Level.SEVERE, "Failed to save entry", e);
             }
         });
+
+        cancel_btn.setOnAction(event -> {
+            try {
+                Main_DisplayController.entryList.add(entry);
+                return_main(event);
+            } catch (IOException e) {
+                logger.log(Level.SEVERE, "Failed to return to main display", e);
+            }
+        });
+
+        browse_res.setOnAction(event -> {
+            // Code to open a file chooser and set the selected resume path
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Select Resume File");
+            int result = fileChooser.showOpenDialog(null);
+            if (result == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
+                resume_path.setText(selectedFile.getAbsolutePath());
+                resume_path.setTooltip(new Tooltip(selectedFile.getAbsolutePath()));
+                entry.setResume(true);
+            }
+        });
+
+        browse_cl.setOnAction(event -> {
+            // Code to open a file chooser and set the selected cover letter path
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Select Cover Letter File");
+            int result = fileChooser.showOpenDialog(null);
+            if (result == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
+                cl_path.setText(selectedFile.getAbsolutePath());
+                cl_path.setTooltip(new Tooltip(selectedFile.getAbsolutePath()));
+                entry.setCover_letter(true);
+            }
+        });
+
     }
 
     public void setEntryData(Entry entry) {
