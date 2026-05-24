@@ -74,15 +74,19 @@ public class Utilities {
             entry.setId(id);
             try {
                 String dateAppliedStr = entryNode.get("date_applied").asString();
-                Date dateApplied = new SimpleDateFormat("yyyy-MM-dd").parse(dateAppliedStr);
-                entry.setDate_applied(dateApplied);
+                if (dateAppliedStr != null && !dateAppliedStr.isEmpty()) {
+                    Date dateApplied = new SimpleDateFormat("yyyy-MM-dd").parse(dateAppliedStr);
+                    entry.setDate_applied(dateApplied);
+                }
             } catch (ParseException e) {
                 logger.log(Level.SEVERE, "Failed to parse date applied", e);
             }
             try {
                 String interviewDateStr = entryNode.get("interview_date").asString();
-                Date interview_date = new SimpleDateFormat("yyyy-MM-dd").parse(interviewDateStr);
-                entry.setInterview_date(interview_date);
+                if (interviewDateStr != null && !interviewDateStr.isEmpty()) {
+                    Date interview_date = new SimpleDateFormat("yyyy-MM-dd").parse(interviewDateStr);
+                    entry.setInterview_date(interview_date);
+                }
             } catch (ParseException e) {
                 logger.log(Level.SEVERE, "Failed to parse interview date", e);
             }

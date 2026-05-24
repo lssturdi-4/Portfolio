@@ -5,12 +5,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="875.0" maxWidth="1080.0" minHeight="875.0" minWidth="1080.0" prefHeight="875.0" prefWidth="1080.0" style="-fx-border-radius: 20px;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sturdy_softwares.Open_FormController">
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="875.0" maxWidth="1080.0" minHeight="875.0" minWidth="1080.0" prefHeight="875.0" prefWidth="1080.0" style="-fx-border-radius: 20px;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sturdy_softwares.Open_FormController">
   <content>
     <AnchorPane maxHeight="879.0" maxWidth="1079.0" minHeight="863.0" minWidth="1069.0" prefHeight="863.0" prefWidth="1069.0" styleClass="root" stylesheets="@ss_style.css">
          <children>
@@ -83,7 +84,7 @@
             <Label layoutX="655.0" layoutY="237.0" styleClass="edit-label" stylesheets="@ss_style.css" text="Pay" underline="true">
               
             </Label>
-            <Label fx:id="pay" alignment="CENTER" layoutX="608.0" layoutY="271.0" prefHeight="26.0" prefWidth="137.0" styleClass="open-info-label" text="(Pay)" textFill="WHITE">
+            <Label fx:id="pay" alignment="CENTER" layoutX="552.0" layoutY="271.0" prefHeight="26.0" prefWidth="252.0" styleClass="open-info-label" text="(Pay)" textFill="WHITE">
                <font>
                   <Font name="Bodoni MT" size="20.0" />
                </font>
@@ -113,7 +114,7 @@
             </Label>
             <Label fx:id="cl_path" layoutX="704.0" layoutY="497.0" styleClass="open-info-label" text="(Cover Letter Uploaded)" />
             <Label layoutX="100.0" layoutY="538.0" styleClass="edit-label" stylesheets="@ss_style.css" text="Job Description:" />
-            <Label fx:id="description" layoutX="266.0" layoutY="553.0" styleClass="open-info-label" text="(Job Description)" />
+            <TextArea fx:id="description" editable="false" layoutX="261.0" layoutY="554.0" prefHeight="220.0" prefWidth="631.0" promptText="(Job Description)" style="-fx-background-color: transparent;" styleClass="open-info-label" />
          </children>
       </AnchorPane>
   </content>
