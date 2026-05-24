@@ -69,3 +69,9 @@
     -fx-font-underline: true; /* Underlined text */
     -fx-effect: dropshadow(gaussian, #ffffff, 1, 0.5, 0, 0); /* Subtle shadow */
 }
+
+.label.open-info-label{
+    -fx-font-family: "Berlin Sans FB", sans-serif; /* Unique font */
+    -fx-font-size: 20px; /* Font size */
+    -fx-text-fill: #ffffff; /* Light blue text */
+}

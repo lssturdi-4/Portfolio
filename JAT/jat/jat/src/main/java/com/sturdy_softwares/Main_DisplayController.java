@@ -243,15 +243,17 @@ public class Main_DisplayController {
 
     @FXML
     private void handleNew() throws IOException {
-        App.setRoot("primary");
+        App.setRoot("new_entry_form");
     }
 
     @FXML
     private void handleOpen(Entry entry) throws IOException {
-        App.setRoot("open_form");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("open_form.fxml"));
+        Parent root = loader.load();
+        App.setRoot(root);
         // Code to initialize the open form with the selected entry's data
-        Open_FormController openController = new Open_FormController(entry);
-        openController.initialize();
+        Open_FormController openController = loader.getController();
+        openController.initialize(entry);
     }
 
     public void loadEntries() throws IOException {

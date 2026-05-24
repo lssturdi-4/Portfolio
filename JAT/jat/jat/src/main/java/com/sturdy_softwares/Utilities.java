@@ -108,6 +108,7 @@ public class Utilities {
 
     public void removeEntry(int removeId) throws IOException {
         entryList.removeIf(entry -> entry.getId() == removeId);
+        saveData();
     }
 
 }

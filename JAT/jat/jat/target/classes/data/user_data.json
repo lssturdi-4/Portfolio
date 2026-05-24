@@ -31,21 +31,5 @@
     "resume" : true,
     "resume_path" : "C:\\Users\\leroy\\OneDrive\\Documents\\Portfolio\\JAT\\jat\\jat\\src\\main\\java\\com\\sturdy_softwares\\Master_Resume.pdf",
     "work_loc" : "Remote"
-  }, {
-    "amount" : 50000.0,
-    "app_status" : "Offered",
-    "company_name" : "GenDyn",
-    "cover_letter" : false,
-    "cover_letter_path" : "",
-    "date_applied" : "2026-05-15T04:00:00.000Z",
-    "description" : "Software Engineer position at Google",
-    "id" : 167489512,
-    "interview" : true,
-    "interview_date" : "2026-05-21T04:00:00.000Z",
-    "job_title" : "Software Engineer Intern",
-    "rate" : "Salary",
-    "resume" : true,
-    "resume_path" : "./Master_Resume.pdf",
-    "work_loc" : "Remote"
   } ]
 }

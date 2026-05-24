@@ -195,12 +195,21 @@ public class Edit_FormController {
         entry.setAmount(Double.parseDouble(amount.getText()));
         entry.setRate(rate.getValue());
 
-        Date dateApplied = Date.from(date_applied.getValue().atStartOfDay(defaultZoneId).toInstant());
-        entry.setDate_applied(dateApplied);
+        if (date_applied.getValue() != null) {
+            Date dateApplied = Date.from(date_applied.getValue().atStartOfDay(defaultZoneId).toInstant());
+            entry.setDate_applied(dateApplied);
+        } else {
+            entry.setDate_applied(null); // Clear date applied if not selected
+        }
 
         entry.setInterview(intrvw.isSelected());
-        Date interviewDate = Date.from(intrvw_date.getValue().atStartOfDay().atZone(defaultZoneId).toInstant());
-        entry.setInterview_date(interviewDate);
+        
+        if (intrvw.isSelected() && intrvw_date.getValue() != null) {
+            Date interviewDate = Date.from(intrvw_date.getValue().atStartOfDay().atZone(defaultZoneId).toInstant());
+            entry.setInterview_date(interviewDate);
+        } else {
+            entry.setInterview_date(null); // Clear interview date if not selected
+        }
 
         entry.setResume(resume_path.getText() != null && !resume_path.getText().isEmpty());
         entry.setResume_path(resume_path.getText());
