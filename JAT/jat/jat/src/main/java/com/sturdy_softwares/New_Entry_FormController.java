@@ -22,7 +22,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 
-public class Edit_FormController {
+public class New_Entry_FormController {
     private Entry entry;
 
     @FXML
@@ -96,8 +96,6 @@ public class Edit_FormController {
             return;
         }
 
-        utilities.loadData();
-        utilities.removeEntry(entry.getId());
         utilities.addEntry(updatedEntry);
 
         // After saving, return to the main display
@@ -108,6 +106,7 @@ public class Edit_FormController {
     }
     
     public void initialize() {
+        this.entry = new Entry();
         // Initialization code, if needed
         app_status.getItems().addAll("Applied", "Interview", "Offered", "Rejected");
         rate.getItems().addAll("Hourly", "Salary");
@@ -126,7 +125,7 @@ public class Edit_FormController {
 
         cancel_btn.setOnAction(event -> {
             try {
-                Main_DisplayController.entryList.add(entry);
+                this.entry = null; // Clear the entry object when canceling
                 return_main(event);
             } catch (IOException e) {
                 logger.log(Level.SEVERE, "Failed to return to main display", e);
@@ -159,23 +158,6 @@ public class Edit_FormController {
             }
         });
 
-    }
-
-    public void setEntryData(Entry entry) {
-        this.entry = entry;
-        // Code to populate the edit form fields with the entry data
-        job_title.setText(entry.getJob_title());
-        cmp_name.setText(entry.getCompany_name());
-        work_loc.setText(entry.getWork_loc());
-        app_status.setValue(entry.getApp_status());
-        amount.setText(String.valueOf(entry.getAmount()));
-        rate.setValue(entry.getRate());
-        date_applied.setValue(entry.getDate_applied().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-        intrvw.setSelected(entry.isInterview());
-        intrvw_date.setValue(entry.getInterview_date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-        resume_path.setText(entry.getResume_path());
-        cl_path.setText(entry.getCover_letter_path());
-        description.setText(entry.getDescription());
     }
 
     public Entry getEntry() {

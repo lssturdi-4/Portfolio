@@ -31,6 +31,10 @@ public class Entry {
         this.cover_letter = cover_letter;
     }
 
+    public Entry() {
+        this.id = Main_DisplayController.idGenerator.generateId();
+    }
+
     public int getId() {
         return id;
     }

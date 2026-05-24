@@ -33,6 +33,16 @@ public class Utilities {
         entryList.add(entry);
         saveData();
     }
+
+    public void updateEntry(Entry updatedEntry) throws IOException {
+        for (int i = 0; i < entryList.size(); i++) {
+            if (entryList.get(i).getId() == updatedEntry.getId()) {
+                entryList.set(i, updatedEntry);
+                break;
+            }
+        }
+        saveData();
+    }
     
     public void loadData() {
         // Code to load data from a file or database and populate the entryList
@@ -87,14 +97,6 @@ public class Utilities {
     }
 
     public void saveData() throws IOException {
-        // ObjectMapper objectMapper = new ObjectMapper();
-        // ObjectNode jsonNode = objectMapper.createObjectNode();
-        // jsonNode.put("name", "Abul Hasan");
-        // jsonNode.put("age", 23);
-        // jsonNode.put("city", "Lucknow");
-        // jsonNode.put("state", "Uttar Pradesh");
-        // jsonNode.put("country", "India");
-        // objectMapper.writeValue(new File("mydata.json"), jsonNode);
         ObjectMapper objectMapper = JsonMapper.builder()
                                     .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)                            
                                     .build();
@@ -106,6 +108,7 @@ public class Utilities {
 
     public void removeEntry(int removeId) throws IOException {
         entryList.removeIf(entry -> entry.getId() == removeId);
+        saveData();
     }
 
 }
