@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<project name="maven-antrun-" default="main"  >
-<target name="main">
-  <echo file="C:\Users\leroy\OneDrive\Documents\Portfolio\JAT2.0\jat\target/runme.bat">start jlink-image\bin\javaw -jar modules\jat-1.jar</echo>
-</target>
-</project>
