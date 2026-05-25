@@ -31,7 +31,9 @@
         <plugins>
             <!-- adds file to let you run program outside of IDE -->
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -97,6 +99,7 @@
                             <modules>
                                 <module>${project.groupId}</module>
                             </modules>
+                            <jarInclusionPolicy>NONE</jarInclusionPolicy>
                             <launcher>
                                 <name>${project.groupId}</name>
 
