@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 
 public class Open_FormController {
     Entry entry = new Entry();
@@ -28,7 +29,7 @@ public class Open_FormController {
     private Label date_applied;
     
     @FXML
-    private Label description;
+    private TextArea description;
     
     @FXML
     private Button edit_btn;
@@ -107,7 +108,7 @@ public class Open_FormController {
         date_applied.setText(entry.getDate_applied() != null ? formatter.format(entry.getDate_applied()) : "N/A");
         interviewed.setText(entry.isInterview() ? "Yes" : "No");
 
-        interview_date.setText(entry.getInterview_date() != null ? formatter.format(entry.getInterview_date()) : "N/A");
+        interview_date.setText(entry.getInterview_date() != null && !entry.getInterview_date().toString().isEmpty() ? formatter.format(entry.getInterview_date()) : "N/A");
 
         int lastSlashIndex = entry.getResume_path() != null ? entry.getResume_path().lastIndexOf("\\") : -1;
         String resumeFileName = (lastSlashIndex != -1 && entry.getResume_path().length() > lastSlashIndex + 1) ? entry.getResume_path().substring(lastSlashIndex + 1) : "N/A";
@@ -119,6 +120,7 @@ public class Open_FormController {
         cl_path.setText(entry.isCover_letter() ? clFileName : "N/A");
         
         description.setText(entry.getDescription());
+        description.setEditable(false);
         work_loc.setText(entry.getWork_loc());
 
         String rateText = entry.getRate() != null ? entry.getRate().equalsIgnoreCase("Salary") ? "annually" : "per hour" : "N/A";

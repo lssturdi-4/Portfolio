@@ -170,9 +170,10 @@ public class Edit_FormController {
         app_status.setValue(entry.getApp_status());
         amount.setText(String.valueOf(entry.getAmount()));
         rate.setValue(entry.getRate());
-        date_applied.setValue(entry.getDate_applied().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+        
+        date_applied.setValue(entry.getDate_applied() != null && !entry.getDate_applied().toString().isEmpty() ? entry.getDate_applied().toInstant().atZone(ZoneId.systemDefault()).toLocalDate() : null);
         intrvw.setSelected(entry.isInterview());
-        intrvw_date.setValue(entry.getInterview_date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+        intrvw_date.setValue(entry.getInterview_date() != null && !entry.getInterview_date().toString().isEmpty() ? entry.getInterview_date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate() : null);
         resume_path.setText(entry.getResume_path());
         cl_path.setText(entry.getCover_letter_path());
         description.setText(entry.getDescription());
