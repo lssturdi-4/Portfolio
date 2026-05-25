@@ -18,12 +18,12 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>11</version>
+            <version>21</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
-            <version>11</version>
+            <version>21</version>
         </dependency>
     </dependencies>
 
@@ -51,9 +51,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.11.0</version>
                 <configuration>
-                    <release>11</release>
+                    <release>21</release>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -82,7 +82,7 @@
             <plugin>
                 <groupId>org.moditect</groupId>
                 <artifactId>moditect-maven-plugin</artifactId>
-                <version>1.0.0.Beta2</version>
+                <version>1.2.2.Final</version>
                 <executions>
                     <execution>
                         <id>create-runtime-image</id>
