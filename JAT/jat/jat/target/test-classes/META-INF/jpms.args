@@ -1,0 +1,4 @@
+--patch-module
+com.sturdy_softwares=_
+--add-reads
+com.sturdy_softwares=ALL-UNNAMED
