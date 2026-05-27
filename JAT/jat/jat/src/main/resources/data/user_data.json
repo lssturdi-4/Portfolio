@@ -1,3 +1,19 @@
 {
-  "entries" : [ ]
+  "entries" : [ {
+    "amount" : 80000.0,
+    "app_status" : "Applied",
+    "company_name" : "CEO Foundry LLC",
+    "cover_letter" : false,
+    "cover_letter_path" : "",
+    "date_applied" : "2026-05-23T04:00:00.000Z",
+    "description" : "Role Overview\nWe are looking for motivated Java Developers with 0–4 years of experience to join our growing team. This role is ideal for fresh graduates eager to start their careers or early professionals seeking to expand their expertise in enterprise-level software development.\n\nKey Responsibilities\nJava application development: Design, develop, and maintain applications using Java.\n\nCode debugging: Identify and resolve technical issues efficiently.\n\nDatabase integration: Work with SQL and relational databases.\n\nAPI development: Build and consume RESTful services.\n\nTeam collaboration: Partner with QA, DevOps, and product teams.\n\n📚 Required Skills\nStrong knowledge of Core Java (OOP, collections, exception handling).\n\nFamiliarity with Spring Framework or similar.\n\nUnderstanding of SQL/databases.\n\nExposure to REST APIs.\n\nGood problem-solving and communication skills.\n\n🌟 Preferred Skills\nExperience with Microservices.\n\nKnowledge of Cloud platforms (AWS, Azure, GCP).\n\nFamiliarity with Version control tools like Git.\n\n🎓 Eligibility\nBachelor’s degree in computer science, IT, or related field.\n\nFresh graduates and candidates with up to 4 years of relevant experience are encouraged to apply.",
+    "id" : 879516742,
+    "interview" : false,
+    "interview_date" : null,
+    "job_title" : "Java Developer",
+    "rate" : "Salary",
+    "resume" : true,
+    "resume_path" : "C:\\Users\\leroy\\OneDrive\\Documents\\Resumes\\Master Resume.pdf",
+    "work_loc" : "Remote"
+  } ]
 }
