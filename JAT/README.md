@@ -1,9 +1,9 @@
-# Description
+## Description
 - The title of this project is JAT (Job Application Tracker). JAT provides a central location to track, manage, and update job applications for job seekers during their hiring journey.
 - This project is fully developed in Java and GUI was built using JavaFX. Dependencies and external tools were utilize through Maven. 
 - The program is running on JavaFX 21, Maven 3.1.3, and Java 21.0.11.
 
-# How to Run
+## How to Run
 - The following versions for each tool are needed in order to run the program properly
     + Java 21.0.11
     + JavaFX 21
@@ -17,7 +17,7 @@
 - User data is empty but can be stored once an entry is saved
     - Sample data can be deleted without any complications.
 
-# Program Features
+## Program Features
 - Save an New Entry
     + Click '+' on the home page to add a new job entry
     + Fill each field with desired information (Pay amount must be numbers only)
