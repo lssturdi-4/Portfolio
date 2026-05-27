@@ -2,6 +2,10 @@
 
 ## This repository consists of various projects written in Java, React JS, Python, and C. The README files will describe each project in greater detail and how to run them.
 
+## Projects
+### JAT
+- JAT (Job Application Tracker). Java program with a GUI built using JavaFX and Scenebuilder
+
 ### Contact Information
 - Resume: https://github.com/lssturdi-4/Portfolio/blob/main/Resume
 - Email: sturdiventleroy@gmail.com
