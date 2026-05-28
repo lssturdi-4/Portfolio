@@ -18,6 +18,11 @@ import javafx.stage.Stage;
 public class App extends Application {
 
     private static Scene scene;
+    public  static Utilities utilities;
+    public  static Main_DisplayController mainDisplayController;
+    public  static New_Entry_FormController newEntryController;
+    public  static Edit_FormController editEntryController;
+    public  static Open_FormController openform;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -42,7 +47,13 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        App.utilities = new Utilities();
+        App.mainDisplayController = new Main_DisplayController();
+        mainDisplayController.loadEntries();
+        App.newEntryController = new New_Entry_FormController();
+        App.editEntryController = new Edit_FormController();
+        App.openform = new Open_FormController();
         launch();
     }
 

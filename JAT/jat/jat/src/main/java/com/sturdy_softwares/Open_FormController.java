@@ -85,8 +85,8 @@ public class Open_FormController {
         App.setRoot(root);
         // Code to open the edit form and pass the entry data for editing
         System.out.println("Opening edit form for entry: " + entry.getId());
-        Edit_FormController editController = loader.getController();
-        editController.setEntryData(entry);
+        App.editEntryController = loader.getController();
+        App.editEntryController.setEntryData(entry);
         // Code to display the edit form (e.g., using a new stage or scene)
 
     }
@@ -96,6 +96,7 @@ public class Open_FormController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("jat_main.fxml"));
         Parent root = loader.load();
         App.setRoot(root);
+        App.mainDisplayController = loader.getController();
 
     }
 

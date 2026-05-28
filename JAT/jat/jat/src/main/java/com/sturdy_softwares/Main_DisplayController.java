@@ -60,11 +60,7 @@ public class Main_DisplayController {
     static final IdGenerator idGenerator = new IdGenerator();
 
     public void initialize() throws IOException {
-        
-
-        loadEntries();
-        Utilities utilities = new Utilities();
-        utilities.loadData();
+        Utilities utilities = App.utilities;
         // Set tooltips for buttons
         del_btn.setTooltip(new Tooltip("Delete job entry"));
         edit_btn.setTooltip(new Tooltip("Edit job entry"));
@@ -90,7 +86,9 @@ public class Main_DisplayController {
         });
         date_applied.setCellValueFactory(cellData -> {
             DatePicker datePicker = new DatePicker();
-            datePicker.setValue(cellData.getValue().getDate_applied().toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate());
+            if (cellData.getValue().getDate_applied() != null) {
+                datePicker.setValue(cellData.getValue().getDate_applied().toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate());
+            }
             datePicker.setOnAction(event -> {
                 cellData.getValue().setDate_applied(java.util.Date.from(datePicker.getValue().atStartOfDay(java.time.ZoneId.systemDefault()).toInstant()));
                 try {
@@ -237,13 +235,16 @@ public class Main_DisplayController {
         Parent root = loader.load();
         App.setRoot(root);
 
-        Edit_FormController editController = loader.getController();
-        editController.setEntryData(entry);
+        App.editEntryController = loader.getController();
+        App.editEntryController.setEntryData(entry);
     }
 
     @FXML
     private void handleNew() throws IOException {
-        App.setRoot("new_entry_form");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("new_entry_form.fxml"));
+        Parent root = loader.load();
+        App.setRoot(root);
+        App.newEntryController = loader.getController();
     }
 
     @FXML
@@ -252,13 +253,15 @@ public class Main_DisplayController {
         Parent root = loader.load();
         App.setRoot(root);
         // Code to initialize the open form with the selected entry's data
-        Open_FormController openController = loader.getController();
-        openController.initialize(entry);
+        App.openform = loader.getController();
+        App.openform.initialize(entry);
     }
 
     public void loadEntries() throws IOException {
         // Code to load data from a file or database and populate the entryList
-        entryList.setAll(new Utilities().getEntries());
+        entryList.clear();
+        App.utilities.loadData();
+        entryList.setAll(App.utilities.getEntries());
     }
 
 }
