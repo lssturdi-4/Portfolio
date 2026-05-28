@@ -2,6 +2,7 @@ package com.sturdy_softwares;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -45,6 +46,7 @@ public class Utilities {
     }
     
     public void loadData() {
+        entryList.clear();
         // Code to load data from a file or database and populate the entryList
         String filePath = "C:\\Users\\leroy\\OneDrive\\Documents\\Portfolio\\JAT\\jat\\jat\\src\\main\\resources\\data\\user_data.json";
         File dataFile;
@@ -101,13 +103,23 @@ public class Utilities {
     }
 
     public void saveData() throws IOException {
+        try (FileWriter fileWriter = new FileWriter("C:\\Users\\leroy\\OneDrive\\Documents\\Portfolio\\JAT\\jat\\jat\\src\\main\\resources\\data\\user_data.json")) {
+            // Clear the file before writing new data
+                fileWriter.write(""); // Clear the file before writing new data
+                fileWriter.flush();
+                fileWriter.close();
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, "Failed to create file writer for data file", e);
+            return;
+        }
+        File dataFile = new File("C:\\Users\\leroy\\OneDrive\\Documents\\Portfolio\\JAT\\jat\\jat\\src\\main\\resources\\data\\user_data.json");
         ObjectMapper objectMapper = JsonMapper.builder()
                                     .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)                            
                                     .build();
 
         JsonNode entriesNode = objectMapper.valueToTree(entryList);
         JsonNode rootNode = objectMapper.createObjectNode().set("entries", entriesNode);
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("C:\\Users\\leroy\\OneDrive\\Documents\\Portfolio\\JAT\\jat\\jat\\src\\main\\resources\\data\\user_data.json"), rootNode);
+        objectMapper.writerWithDefaultPrettyPrinter().writeValue(dataFile, rootNode);
     }
 
     public void removeEntry(int removeId) throws IOException {

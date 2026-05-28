@@ -84,11 +84,12 @@ public class New_Entry_FormController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("jat_main.fxml"));
         Parent root = loader.load();
         App.setRoot(root);
+        App.mainDisplayController = loader.getController();
     }
 
     @FXML
     void save_entry() throws IOException {
-        Utilities utilities = new Utilities();
+        Utilities utilities = App.utilities;
 
         Entry updatedEntry = getEntry();
 
@@ -99,10 +100,8 @@ public class New_Entry_FormController {
         utilities.addEntry(updatedEntry);
 
         // After saving, return to the main display
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("jat_main.fxml"));
-        Parent root = loader.load();
-        App.setRoot(root);
-
+        return_main(new ActionEvent());
+        App.mainDisplayController.loadEntries();
     }
     
     public void initialize() {

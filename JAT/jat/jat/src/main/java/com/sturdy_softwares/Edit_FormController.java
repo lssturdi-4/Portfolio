@@ -84,6 +84,7 @@ public class Edit_FormController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("jat_main.fxml"));
         Parent root = loader.load();
         App.setRoot(root);
+        App.mainDisplayController = loader.getController();
     }
 
     @FXML
@@ -101,9 +102,8 @@ public class Edit_FormController {
         utilities.addEntry(updatedEntry);
 
         // After saving, return to the main display
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("jat_main.fxml"));
-        Parent root = loader.load();
-        App.setRoot(root);
+        return_main(new ActionEvent());
+        App.mainDisplayController.loadEntries();
 
     }
     
